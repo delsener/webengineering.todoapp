@@ -1,0 +1,70 @@
+html,
+body {
+    padding: 15px;
+    font-family: Verdana;
+}
+
+.dl-horizontal dt{
+    text-align: left;
+    width: auto;
+    padding-right: 1em;
+}
+
+.dl-horizontal dd{
+    margin-bottom: 1px;
+}
+
+.todolist {
+	padding: 10px;	
+	border: 2px solid #ffffff;
+}
+
+.buttons {
+	float: right;
+	margin: 1px;
+	margin-top: 10px;
+	padding: 2px;
+	background-color: #fbfbfb;
+	border: 2px solid #7b7a7a;
+	width: 60px;
+	text-align: center;
+}
+
+.clearer {
+	clear: both;
+}
+
+.forms {
+}
+
+
+.create {
+	background-color: #cfe5f4;
+}
+
+.todos {
+	background-color: #ffd6d6;
+}
+
+.inProgress {
+	background-color: #ffe0af;
+}
+.done {
+	background-color: #e6fdd9;
+}
+
+
+#mainView .editing-mode .view {
+    display: none;
+}
+
+#mainView .editing-mode .editing {
+    display: block;
+}
+
+#mainView .editing{
+    display: none;
+}
+#mainView .view{
+    display: block;
+}
