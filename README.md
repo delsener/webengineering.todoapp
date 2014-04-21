@@ -1,9 +1,7 @@
 webengineering.todoapp
 ======================
 ## URLS
-Heroku: http://boiling-earth-4617.herokuapp.com/
-
-Heroku Git: git@heroku.com:boiling-earth-4617.git (git clone git@heroku.com:boiling-earth-4617.git -o heroku)
+Heroku: http://hidden-ravine-7841.herokuapp.com/
 
 
 ## Projekt für Vornote
