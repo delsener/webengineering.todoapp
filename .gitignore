@@ -1,0 +1,5 @@
+# could be ignored ... can be installed via npm install express
+# node_modules
+
+# eclipse stuff
+.metadata
