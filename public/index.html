@@ -41,7 +41,13 @@
 			        <div class="form-group">
 			            <label class="col-sm-3 control-label" for="estimation">estimation</label>
 			            <div class="col-sm-9">
-			            	<input id="estimation" type="number" value="8" min="1" max="8" />
+			            	<select id="estimation" >
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="5" selected="selected">5</option>
+							  <option value="8">8</option>
+							</select>
 			            </div>
 			        </div>
 			        <div class="form-group">
@@ -100,7 +106,14 @@
                 <label class="col-sm-3 control-label" for="input-estimation">estimation:</label>
 				<div class="col-sm-9">
                 	<span class="view" id="estimation-<%= id %>"><%= estimation %></span>
-                	<input  class="editing" id="input-estimation" type="number" value="<%= estimation  %>" min="1" max="8" />
+                	<!-- input  class="editing" id="input-estimation" type="number" value="<%= estimation  %>" min="1" max="8" / -->
+					<select id="input-estimation"  class="editing">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="5">5</option>
+						<option value="8">8</option>
+					</select>
 				</div>
         	</div>
 
