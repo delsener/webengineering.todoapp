@@ -58,6 +58,8 @@ var TodoView = Backbone.View.extend({
     editMode: function() {
     	 this.$el.addClass("editing-mode");
          this.title.focus()
+         console.log(this.model.get('estimation'));
+         this.estimation.val(this.model.get('estimation'));
     },
     
     save: function() {
