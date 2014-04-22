@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tasks</title>
+    <title>ZHAW WebEngineering 2 - TodoApp (ScrumBoard)</title>
     
     <!-- Bootstrap -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -25,18 +25,38 @@
 		<h2>Create</h2>
 	    <div class="create">
 	    	<div class="todolist">
-		        <dl class="dl-horizontal">
-		            <dt>title</dt>
-		            <dd> <input id="title" type="text" value="example title" required="required" /></dd>
-		            <dt>assignee</dt>
-		            <dd><input id="assignee" type="text" value="Developer" /></dd>
-		            <dt>estimation</dt>
-		            <dd><input id="estimation" type="number" value="8" min="1" max="8" /></dd>
-		            <dt>description</dt>
-		            <dd><textarea id="description"  required="required"  cols="30" rows="3">description</textarea></dd>
-		        	<dd><span class="buttons"  id="create-button">Create</span></dd>
-		        </dl>
-	        	<div class="clearer"></div>
+	    		<form class="form-horizontal" role="form">
+			        <div class="form-group">
+			            <label class="col-sm-3 control-label" for="title">title</label>
+			            <div class="col-sm-9">
+			            	<input id="title" type="text" value="example title" required="required">
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="col-sm-3 control-label" for="assignee">assignee</label>
+			            <div class="col-sm-9">
+			            	<input id="assignee" type="text" value="Developer" />
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="col-sm-3 control-label" for="estimation">estimation</label>
+			            <div class="col-sm-9">
+			            	<input id="estimation" type="number" value="8" min="1" max="8" />
+			            </div>
+			        </div>
+			        <div class="form-group">
+			            <label class="col-sm-3 control-label" for="description">description</label>
+			            <div class="col-sm-9">
+			            	<textarea id="description"  required="required"  cols="30" rows="3">description</textarea>
+			            </div>
+			        </div>
+			        <div class="form-group">
+				        <div class="col-sm-offset-3 col-sm-9">
+				        	<span class="btn btn-default"  id="create-button">Create</span>
+				        </div>
+			        </div>
+		        </form>
+	        	
 	        </div>
 	    </div>
 	</div>
@@ -59,30 +79,54 @@
 
 <script type="text/template" id="input-template">
     <div class="todolist">
-            <dl class="dl-horizontal">
-                <dt>title</dt>
-                <dd class="view"> <span id="title-<%= id %>"><%= title %></span> </dd>
-                <dd class="editing"><input id="input-title" type="text" value="<%= title %>" /></dd>
+			<form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="input-title">title</label>
+				<div class="col-sm-9">
+                	<span class="view" class="view" id="title-<%= id %>"><%= title %></span> 
+                	<input  class="editing" id="input-title" type="text" value="<%= title %>" />
+				</div>
+        	</div>
                 
-                <dt>assignee</dt>
-                <dd class="view"><span id="assignee-<%= id %>"><%= assignee %> </span></dd>
-                <dd class="editing"><input id="input-assignee" type="text" value="<%= assignee %>" /></dd>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="input-assignee">assignee</label>
+				<div class="col-sm-9">
+                	<span class="view" id="assignee-<%= id %>"><%= assignee %> </span>
+                	<input  class="editing" id="input-assignee" type="text" value="<%= assignee %>" />
+				</div>
+        	</div>
 
-                <dt>estimation:</dt>
-                <dd class="view"><span id="estimation-<%= id %>"><%= estimation %></span></dd>
-                <dd class="editing"><input id="input-estimation" type="number" value="<%= estimation  %>" min="1" max="8" /></dd>
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="input-estimation">estimation:</label>
+				<div class="col-sm-9">
+                	<span class="view" id="estimation-<%= id %>"><%= estimation %></span>
+                	<input  class="editing" id="input-estimation" type="number" value="<%= estimation  %>" min="1" max="8" />
+				</div>
+        	</div>
 
-				<dt>description</dt>
-                <dd class="view"> <span id="description-<%= id %>"> <%= description %></span></dd>
-                <dd class="editing"> <textarea id="input-description" cols="30" rows="3"><%= description %> </textarea></dd>
+            <div class="form-group">
+				<label class="col-sm-3 control-label" for="input-description">description</label>
+				<div class="col-sm-9">
+                 	<span class="view" id="description-<%= id %>"> <%= description %></span>
+                 	<textarea  class="editing" id="input-description" cols="30" rows="3"><%= description %> </textarea>
+				</div>
+        	</div>
 
-				<dd class="view"><span class="buttons" id="next-state-button">Next</span></dd>
-				<dd class="editing"><span class="buttons" id="save-button">Save</span></dd>
-				<dd class="view"><span class="buttons" id="edit-button">Edit</span></dd>
-				<dd class="view"><span class="buttons" data-id="<%= id %>" id="delete-button">Delete</span></dd>
-            </dl>
-			<div class="clearer"></div>
-        </div>
+            <div class="form-group">
+				<div class="col-sm-offset-3 col-sm-3">
+					<span class="btn btn-default view" data-id="<%= id %>" id="delete-button">Delete</span>
+				</div>
+				<div class="col-sm-3">
+					<span class="btn btn-default view" id="edit-button">Edit</span>
+				</div>
+				<div class="col-sm-3">
+					<span class="btn btn-default view" id="next-state-button">Next</span>
+				</div>
+				<div class="col-sm-offset-3 col-sm-3">
+					<span class="btn btn-default editing" id="save-button">Save</span>
+				</div>
+        	</div>
+		</form>
     </div>
 </script>
 
